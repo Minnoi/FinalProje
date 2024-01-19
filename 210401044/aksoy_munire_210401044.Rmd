@@ -94,3 +94,35 @@ ggplot(product_stock_analysis, aes(x = reorder(Product.line, -Average_Stock), y 
   geom_bar(stat = "identity", fill = "lightgreen") +
   labs(title = "Urun Stok Analizi", x = "Urun", y = "Ortalama Stok Miktari") +
   theme_minimal()
+```
+
+
+```{r}
+# Q6 : Veri analizi
+
+
+library(dplyr)
+library(ggplot2)
+library(tidyr)
+
+# İki veri setini birleştirme örneği (örneğin, aynı veri setini kopyalayarak)
+combined_data <- bind_rows(data, data)
+
+# Tablo: İki veri setinin birleştirilmesi
+print("İki Veri Setinin Birleştirilmesi")
+head(combined_data)
+
+# Grafik: Satış Tutarlarına Göre Ürün Kategorileri
+ggplot(data, aes(x = Product.line, y = Total, fill = Product.line)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Satıs Tutarlarına Gore Urun Kategorileri", x = "Urun Kategorisi", y = "Toplam Satıs Tutarı") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+# İstatistik 1: Toplam Satış Tutarı Ortalaması
+average_sales <- mean(data$Total)
+print(paste("Toplam Satış Tutarı Ortalaması:", round(average_sales, 2)))
+
+# İstatistik 2: Satış Miktarı ve Satış Tutarı Arasındaki Korelasyon
+correlation <- cor(data$Quantity, data$Total)
+print(paste("Satış Miktarı ve Satış Tutarı Arasındaki Korelasyon:", round(correlation, 2)))
