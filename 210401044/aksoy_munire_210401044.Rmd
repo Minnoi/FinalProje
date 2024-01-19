@@ -32,3 +32,36 @@ for (product_line in unique_product_lines) {
   cat("En Dusuk Fıyat:", min(product_line_data$Unit.price), "\n")
   cat("Stok Devir Hızı:", sum(product_line_data$Quantity) / nrow(product_line_data), "\n")
 }
+```
+
+
+```{r}
+# Q4 : Veri seti ön işlemesi
+# Veri setini yükleme
+dataset_path <- "C:/Users/munir/OneDrive/Belgeler/sales.csv"
+data <- read.csv(dataset_path, encoding = "UTF-8")
+
+# Ondalık ayraç düzeltme (örneğin, virgül kullanımını değiştirme)
+data$Unit.price <- as.numeric(gsub(",", ".", data$Unit.price))
+
+# Eksik verilerin temizlenmesi
+data <- na.omit(data)
+
+# EUR cinsinden olan "Total" sütununu TRY'ye çevirme
+# Döviz kuru varsayılan olarak 10 olarak alınmıştır, gerçek değeri değiştirmeniz gerekebilir
+doviz_kuru <- 10
+data$Total_TRY <- data$Total * doviz_kuru
+
+# Özetleme: Ön İşleme Adımları Sonuçları
+# Ham veri setindeki eksik veri sayısı
+missing_values_before <- sum(is.na(data$Total))
+
+# Temizlenmiş veri setindeki eksik veri sayısı
+missing_values_after <- sum(is.na(data$Total_TRY))
+
+# Raporda özetleme
+cat("Ham veri setindeki eksik veri sayısı:", missing_values_before, "\n")
+cat("Temizlenmiş veri setindeki eksik veri sayısı:", missing_values_after, "\n")
+
+# İlk birkaç satırı görüntüleme
+head(data)
