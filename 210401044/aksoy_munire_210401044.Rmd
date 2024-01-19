@@ -6,3 +6,9 @@ output: html_notebook
 
 Stok yönetimi ve çok satılan ürünlerle satış kombinasyonu, bir süpermarket işletmesinin başarı performansını artırmak üzere kilit stratejiler sunar.Süpermarketin rekabet gücünü arttırır ve müşteri taleplerine daha hızlı ve etkili şekilde yanıt vermesini sağlar.
 
+
+# Q2 : Proje Amacı
+
+[Supermarket sales](https://www.kaggle.com/datasets/aungpyaeap/supermarket-sales?rvi=1)adlı veri setini kullanarak belirli bir marketin stok yönetimi süreçlerini optimize etmek ve çok satılan ürünlerle satış kombinasyonlarını analiz ederek iş performansını artırmaktır. Şirketimiz, süpermarket sektöründe faaliyet gösteriyor ve karşılaşılan sorun, stok kontrolünün etkin bir şekilde yönetilememesi ve en çok talep gören ürünlerin belirlenerek satış kombinasyonlarının etkili bir şekilde oluşturulmamasıdır.
+
+Projede planlanan ilk analiz etabı, mevcut stok durumunun detaylı bir değerlendirmesi olacaktır. Bu analiz, stok devir hızlarının hesaplanması ve minimum stok seviyelerinin belirlenmesini içerecek. İkinci aşamada ise çok satılan ürünlerin belirlenmesi ve bu ürünler arasındaki satış kombinasyonlarının analizi gerçekleştirilecektir. Bu adımların sonucunda, şirket stoklarını daha etkin bir şekilde yönetebilecek, müşteri taleplerini karşılamak için doğru ürün kombinasyonlarını sunabilecek ve böylece işletme performansını önemli ölçüde artırabilecektir. Bu projenin şirket için sağlayacağı fayda, hem operasyonel süreçlerin iyileştirilmesi hem de gelir artışı yoluyla finansal başarıya olumlu bir etki yapmasıdır.
