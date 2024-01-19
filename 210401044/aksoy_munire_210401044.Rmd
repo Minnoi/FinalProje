@@ -1,0 +1,7 @@
+---
+title: "Münire Aksoy 210401044"
+output: html_notebook
+---
+# Q1 : Problem tanımı
+
+Stok yönetimi ve çok satılan ürünlerle satış kombinasyonu, bir süpermarket işletmesinin başarı performansını artırmak üzere kilit stratejiler sunar.Süpermarketin rekabet gücünü arttırır ve müşteri taleplerine daha hızlı ve etkili şekilde yanıt vermesini sağlar.
