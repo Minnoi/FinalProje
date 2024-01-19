@@ -97,32 +97,9 @@ ggplot(product_stock_analysis, aes(x = reorder(Product.line, -Average_Stock), y 
 ```
 
 
-```{r}
-# Q6 : Veri analizi
+# Q7 : Sonuç değerlendirme, tavsiyeler
+Analizin sonuçları değerlendirildiğinde, elde edilen bulguların projenin ana hedefine ulaşmada etkili olduğu görülmektedir.En çok satılan ürün kombinasyonları ve stok analizi üzerine yapılan analizler, süpermarketin stok yönetimini kolaylaştırmak ve müşteri taleplerine hızlı yanıt verebilmek adına değerli bilgiler sunmaktadır. Bulguların mantıklı ve tutarlı olduğu, özellikle en çok satılan ürünlerin belirlenmesi ve stok durumunun analizi konularında projenin başarılı olduğu gözlemlenmektedir.
 
+Projenin ana problemlerini çözme potansiyeli yüksektir ve bu sonuçlar müşteriler tarafından etkili bir şekilde kullanılabilir.
 
-library(dplyr)
-library(ggplot2)
-library(tidyr)
-
-# İki veri setini birleştirme örneği (örneğin, aynı veri setini kopyalayarak)
-combined_data <- bind_rows(data, data)
-
-# Tablo: İki veri setinin birleştirilmesi
-print("İki Veri Setinin Birleştirilmesi")
-head(combined_data)
-
-# Grafik: Satış Tutarlarına Göre Ürün Kategorileri
-ggplot(data, aes(x = Product.line, y = Total, fill = Product.line)) +
-  geom_bar(stat = "identity") +
-  labs(title = "Satıs Tutarlarına Gore Urun Kategorileri", x = "Urun Kategorisi", y = "Toplam Satıs Tutarı") +
-  theme_minimal() +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
-
-# İstatistik 1: Toplam Satış Tutarı Ortalaması
-average_sales <- mean(data$Total)
-print(paste("Toplam Satış Tutarı Ortalaması:", round(average_sales, 2)))
-
-# İstatistik 2: Satış Miktarı ve Satış Tutarı Arasındaki Korelasyon
-correlation <- cor(data$Quantity, data$Total)
-print(paste("Satış Miktarı ve Satış Tutarı Arasındaki Korelasyon:", round(correlation, 2)))
+Bu çalışmayı ilerletmek isteyenler için öneriler şunlar olabilir: Analizin kapsamını genişletmek, müşteri memnuniyetini ve satış performansını artırmaya yönelik önerileri içermek, ve daha fazla veri seti veya gerçek zamanlı veri kullanımı gibi ileri düzey analiz tekniklerini değerlendirmek.Ayrıca, analiz sonuçlarını daha geniş bir topluluğa açıklayıcı bir şekilde iletmek için kullanıcı dostu görselleştirmeler eklemek de projenin geliştirilmesine katkı sağlayabilir.
