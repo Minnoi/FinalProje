@@ -65,3 +65,32 @@ cat("Temizlenmiş veri setindeki eksik veri sayısı:", missing_values_after, "\
 
 # İlk birkaç satırı görüntüleme
 head(data)
+```
+
+
+```{r}
+# Q5 : Veri mühendisliği
+# En çok satılan ürünleri bulma
+top_selling_products <- data %>%
+  group_by(Product.line) %>%
+  summarise(Total_Sales = sum(Total)) %>%
+  arrange(desc(Total_Sales)) %>%
+  head(5)  # İlk 5 ürünü al
+
+# En çok satılan ürünleri görselleştirme (örneğin, sütun grafiği)
+library(ggplot2)
+ggplot(top_selling_products, aes(x = reorder(Product.line, -Total_Sales), y = Total_Sales)) +
+  geom_bar(stat = "identity", fill = "skyblue") +
+  labs(title = "En Cok Satılan Urunler", x = "Urun", y = "Toplam Satıs Tutarı") +
+  theme_minimal()
+
+# Ürün stok analizi
+product_stock_analysis <- data %>%
+  group_by(Product.line) %>%
+  summarise(Average_Stock = mean(Quantity))
+
+# Ürün stok analizini görselleştirme (örneğin, çubuk grafiği)
+ggplot(product_stock_analysis, aes(x = reorder(Product.line, -Average_Stock), y = Average_Stock)) +
+  geom_bar(stat = "identity", fill = "lightgreen") +
+  labs(title = "Urun Stok Analizi", x = "Urun", y = "Ortalama Stok Miktari") +
+  theme_minimal()
